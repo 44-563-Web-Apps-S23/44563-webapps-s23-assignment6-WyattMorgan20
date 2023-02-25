@@ -39,17 +39,17 @@
         console.log("Check the guess")
         password = document.getElementById("password").value
         check = document.getElementById("check").value
-        confirmed = confirm("Are these the values? " + password +"  and " + check)
+        //confirmed = confirm("Are these the values? " + password +"  and " + check)
     
         out = document.getElementById("result")
-        if(confirmed){
+        if(check == password){
             good += 1
             alert("You got it right")
-            out.innerHTML = good
+            out.innerHTML = "Good = " + good + "\nOops = " + oops
         } else {
             oops += 1
             alert("Sorry")
-            out.innerHTML = oops
+            out.innerHTML = "Good = " + good + "\nOops = " + oops
     }
     }
 </script>
