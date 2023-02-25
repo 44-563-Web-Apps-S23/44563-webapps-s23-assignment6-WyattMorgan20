@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+ 
+<body>
+<title>Conversion</title>
+<h2>Wyatt Morgan shows currency conversions</h2>
+
+<form>
+    <label for="amount">Enter base amount </label>
+    <input type ="number" id="amount" name="amount" value = "50"> <br>
+
+    <label for="conversion">Enter the conversin rate</label>
+    <input type ="number" id="conversion" name="conversion" value = "35"> <br>
+
+    <input type="button" onclick="convert()" value="Show Conversions">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+
+function convert(){
+    var iteration = 0
+    var newValue = 1
+
+    console.log("Show Conversions")
+    amount = document.getElementById("amount").value
+    conversion = document.getElementById("conversion").value
+    out = document.getElementById("result")
+    var toShow = ""
+    
+    for(let i = 1; i < 32; i*2){
+        newValue = amount * i
+        toShow.appendChild(newValue)
+        
+    }
+    out.innerHTML = "Conversions are: " + toShow
+}
+
+/*function resolveForm (){
+    console.log("Getting form values")
+    age = document.getElementById("form1_age").value
+    nick = document.getElementById("form1_nick").value
+    confirmed = confirm("Are these the values? "+age+" and "+nick)
+    
+    out = document.getElementById("result")
+    if(confirmed){
+        out.innerHTML = "Values were confirmed"
+    } else {
+        out.innerHTML = "Values were not confirmed"
+    }
+}*/
+</script>
+
+</body>
+</html> 
