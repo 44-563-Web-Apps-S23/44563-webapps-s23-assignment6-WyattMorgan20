@@ -6,32 +6,22 @@
  </head>
 <body>
 
-<h2>Getting input</h2>
+    <h2>Getting input</h2>
 
-<!-- <form>
-    <label for="form1_age">What is your age </label>
-    <input type ="number" id="form1_age" name="form1_age" min=10 max=50 step=2 value=30> <br>
+    <form>
+        <label for = "password">The hidden painter name</label>
+        <input type = "password" id = "password" value = "Monet"> <br>
 
-    <label for="form1_nick">What is your nickname </label>
-    <input type ="text" id="form1_nick" name="form1_nick" autofocus> <br>
+        <label for = "check">Guess the painter</label>
+        <input type = "text" id = "check"> <br>
 
-    <input type="button" onclick="resolveForm()" value="Get values from form">
-</form> -->
-
-<form>
-    <label for = "password">The hidden painter name</label>
-    <input type = "password" id = "password" value = "Monet"> <br>
-
-    <label for = "check">Guess the painter</label>
-    <input type = "text" id = "check"> <br>
-
-    <input type="button" onclick="checkPainter()" value="Check the guess">
-</form>
+        <input type="button" onclick="checkPainter()" value="Check the guess">
+    </form>
 
 
-<p id="result">results</p>
+    <p id="result">results</p>
 
-<script>
+    <script>
     var good = 0
     var oops = 0
 
@@ -39,7 +29,6 @@
         console.log("Check the guess")
         password = document.getElementById("password").value
         check = document.getElementById("check").value
-        //confirmed = confirm("Are these the values? " + password +"  and " + check)
     
         out = document.getElementById("result")
         if(check == password){
@@ -52,24 +41,31 @@
             out.innerHTML = "Good = " + good + "\nOops = " + oops
     }
     }
-</script>
+    </script>
 
-<!-- <script> 
+    <div class = "Container">
+        <img src = "magnolia.jpg" id = "Magnolia" alt = "Magnolia" height = "100" width = "100" onclick = "selectImage()">
+    </div>
 
-function resolveForm (){
-    console.log("Getting form values")
-    age = document.getElementById("form1_age").value
-    nick = document.getElementById("form1_nick").value
-    confirmed = confirm("Are these the values? "+age+" and "+nick)
-    
-    out = document.getElementById("result")
-    if(confirmed){
-        out.innerHTML = "Values were confirmed"
-    } else {
-        out.innerHTML = "Values were not confirmed"
-    }
-}
-</script> -->
+    <script>
+        var useImage = 1
+
+        function selectImage(){
+            switch(useImage){
+                case 1:
+                    document.getElementById('Magnolia').src = "olea.jpg"
+                    useImage += 1
+                    break;
+                case 2:
+                    document.getElementById('Magnolia').src = "restio.jpg"
+                    useImage += 1
+                    break;
+                case 3:
+                    document.getElementById('Magnolia').src = "magnolia.jpg"
+            }
+        }
+    </script>
+
 
 </body>
 </html> 
