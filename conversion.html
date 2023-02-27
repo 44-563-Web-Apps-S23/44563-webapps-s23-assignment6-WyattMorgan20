@@ -65,23 +65,26 @@ function convert(){
             convertedValue = value * conversion
         
         if(document.getElementById("average").checked) {
-            
+            average += convertedValue
         }
         if(document.getElementById("max").checked) {
             if(convertedValue > max){
-                max == Math.max(convertedValue)
+                //console.log("maxvalue is"+convertedValue)
+                max = convertedValue
             }
-            //toShow += "Max is " + max + "; "
         }
         if(document.getElementById("min").checked) {
             if(min == 0){
-                min == Math.min(convertedValue)
+                min = convertedValue
             }
             else if(convertedValue < min){
-                min == Math.min == covertedValue
+                min = convertedValue
             }
-            //toShow += "Min is " + min + "; "
         }
+        }
+        if(document.getElementById("average").checked) {
+            average = average/5
+            toShow += "Average is " + average + "; "
         }
         if(document.getElementById("max").checked) {
             toShow += "Max is " + max + "; "
@@ -89,10 +92,8 @@ function convert(){
         if(document.getElementById("min").checked) {
             toShow += "Min is " + min + "; "
         }
-        document.getElementById("result2").innerHTML = "Op is " + toShow
+        document.getElementById("result2").innerHTML = toShow
     }
-
-    
 </script>
 
 </body>
