@@ -16,7 +16,7 @@
 </form>
 
 
-<p id="result">This text will be replaced </p>
+<p id="result">This text will be replaced</p>
 
 <script> 
 
@@ -35,20 +35,64 @@ function convert(){
     document.getElementById("result").innerHTML = "Conversions are: " + toShow
     
 }
+</script>
 
-/*function resolveForm (){
-    console.log("Getting form values")
-    age = document.getElementById("form1_age").value
-    nick = document.getElementById("form1_nick").value
-    confirmed = confirm("Are these the values? "+age+" and "+nick)
+<form>
+    <input type = "radio" id = "average" value = "mean" onclick = "chooseOp()">
+    <label for = "average">average</label></br>
     
-    out = document.getElementById("result")
-    if(confirmed){
-        out.innerHTML = "Values were confirmed"
-    } else {
-        out.innerHTML = "Values were not confirmed"
+    <input type = "radio" id = "max" value = "maximum" onclick = "chooseOp()">
+    <label for = "max">max</label></br>
+    
+    <input type = "radio" id = "min" value = "minimum" onclick = "chooseOp()">
+    <label for = "min">min</label></br>
+</form>
+
+<p id="result2">This text will be replaced </p>
+
+<script>
+    function chooseOp(){
+        console.log("Math")
+        amount = document.getElementById("amount").value
+        conversion = document.getElementById("conversion").value
+        var toShow = ""
+        var max = 0
+        var min = 0
+        var average = 0
+
+        for(i = 0; i < 5; i++){
+            value = amount * Math.pow(2, i)
+            convertedValue = value * conversion
+        
+        if(document.getElementById("average").checked) {
+            
+        }
+        if(document.getElementById("max").checked) {
+            if(convertedValue > max){
+                max == Math.max(convertedValue)
+            }
+            //toShow += "Max is " + max + "; "
+        }
+        if(document.getElementById("min").checked) {
+            if(min == 0){
+                min == Math.min(convertedValue)
+            }
+            else if(convertedValue < min){
+                min == Math.min == covertedValue
+            }
+            //toShow += "Min is " + min + "; "
+        }
+        }
+        if(document.getElementById("max").checked) {
+            toShow += "Max is " + max + "; "
+        }
+        if(document.getElementById("min").checked) {
+            toShow += "Min is " + min + "; "
+        }
+        document.getElementById("result2").innerHTML = "Op is " + toShow
     }
-}*/
+
+    
 </script>
 
 </body>
